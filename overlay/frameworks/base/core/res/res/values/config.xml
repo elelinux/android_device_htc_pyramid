@@ -21,12 +21,6 @@
      for different hardware and product builds. -->
 <resources>
 
-    <!-- Flag indicating whether the surface flinger is inefficient
-         at performing a blur.  Used by parts of the UI to turn off
-         the blur effect where it isn't worth the performance hit.
-         As of Honeycomb, blurring is not supported anymore. -->
-    <bool name="config_sf_slowBlur">false</bool>
-
     <!-- Default color for notification LED is green. -->
     <color name="config_defaultNotificationColor">#ff00ff00</color>
 
@@ -214,7 +208,4 @@
     <!-- Is the notification LED intrusive? Used to decide if there should be a disable option -->
     <bool name="config_intrusiveNotificationLed">true</bool>
 
-    <!-- Timeout in MS for how long you have to long-press the back key to 
-         kill the foreground app. -->
-    <integer name="config_backKillTimeout">1500</integer>
 </resources>

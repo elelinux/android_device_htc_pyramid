@@ -12,8 +12,8 @@ ro.telephony.ril.v3=signalstrength
 ro.telephony.default_network=0
 
 # wifi calling
-rilswitch.vendorlibpath=/system/lib/libhtc_ril.so
-rilswitch.ganlibpath=/system/lib/libganril.so
+# rilswitch.vendorlibpath=/system/lib/libhtc_ril.so
+# rilswitch.ganlibpath=/system/lib/libganril.so
 
 # wifi
 wifi.interface=wlan0
@@ -40,6 +40,6 @@ persist.sys.usb.config=mass_storage,adb
 # System property for cabl
 ro.qualcomm.cabl=1
 
-#Low Power Audio
-lpa.decode=true
-lpa.use-stagefright=true
+# Low Power Audio
+#lpa.decode=true
+#lpa.use-stagefright=true

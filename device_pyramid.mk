@@ -77,9 +77,6 @@ PRODUCT_COPY_FILES += device/htc/pyramid/configs/thermald.conf:system/etc/therma
 
 # Sound configs
 PRODUCT_COPY_FILES += \
-    device/htc/msm8660-common/configs/audio_policy.conf:system/etc/audio_policy.conf
-
-PRODUCT_COPY_FILES += \
     device/htc/pyramid/dsp/AdieHWCodec.csv:system/etc/AdieHWCodec.csv \
     device/htc/pyramid/dsp/AIC3254_REG.csv:system/etc/AIC3254_REG.csv \
     device/htc/pyramid/dsp/AIC3254_REG_DualMic.csv:system/etc/AIC3254_REG_DualMic.csv \

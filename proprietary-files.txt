@@ -9,9 +9,9 @@ bin/ipd
 bin/mpdecision
 bin/netmgrd
 bin/netsharing
+bin/qmuxd
 bin/rmt_storage
 bin/thermald
-bin/qmuxd
 
 # Audio
 lib/libacdbloader.so
@@ -70,6 +70,3 @@ lib/libmllite.so
 lib/libmlplatform.so
 lib/libmpl_jni.so
 lib/libmpl.so
-
-# V8
-lib/libv8.so

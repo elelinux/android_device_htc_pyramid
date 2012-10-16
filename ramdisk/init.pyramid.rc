@@ -74,6 +74,9 @@ on post-fs-data
     setprop vold.post_fs_data_done 1
 
 on boot
+    # for systrace
+    mount debugfs /sys/kernel/debug /sys/kernel/debug
+
     # Chown polling nodes as needed from UI running on system server
     chmod 0664 /sys/devices/platform/msm_sdcc.1/polling
     chmod 0664 /sys/devices/platform/msm_sdcc.2/polling
@@ -193,10 +196,6 @@ service iprenew_wlan0 /system/bin/dhcpcd -n
     disabled
     oneshot
 
-service mpdecision /system/bin/mpdecision --no_sleep --avg_comp --single_core_while_panel_off
-    user root
-    disabled
-
 service netmgrd /system/bin/netmgrd
     class main
 
@@ -225,11 +224,6 @@ service qmuxd /system/bin/qmuxd
 service rmt_storage /system/bin/rmt_storage /dev/block/mmcblk0p26 /dev/block/mmcblk0p27 /dev/block/mmcblk0p18
     class core
     user root
-
-service thermald /system/bin/thermald
-    user root
-    group root
-    disabled
 
 service wpa_supplicant /system/bin/wpa_supplicant -Dnl80211 -iwlan0 -c /data/misc/wifi/wpa_supplicant.conf
     user root

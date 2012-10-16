@@ -16,6 +16,7 @@ debug.composition.type=dyn
 #debug.mdpcomp.logs=0
 debug.enabletr=true
 debug.sf.hw=1
+debug.egl.hw=1
 ro.opengles.version=131072
 
 # qcom cpugovernor service

@@ -27,16 +27,12 @@ PRODUCT_PACKAGES += \
     gps.pyramid \
     lights.pyramid
 
-# Wifi Calling
-#PRODUCT_PACKAGES += \
-#    GanOptimizer
-
 ## The gps config appropriate for this device
 PRODUCT_COPY_FILES += device/common/gps/gps.conf_EU:system/etc/gps.conf
 
 # Bluetooth
 PRODUCT_COPY_FILES += \
-    device/htc/msm8660-common/firmware/bcm4329.hcd:system/vendor/firmware/bcm4329.hcd
+    device/htc/msm8660-common/firmware/bcm4329.hcd:system/vendor/firmware/bcm4329.hcd 
 
 # Wifi
 $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4329/device-bcm.mk)
@@ -77,7 +73,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += device/htc/pyramid/configs/AudioBTID.csv:system/etc/AudioBTID.csv
 
 # QC thermald config
-PRODUCT_COPY_FILES += device/htc/pyramid/configs/thermald.conf:system/etc/thermald.conf
+
 
 # Sound configs
 PRODUCT_COPY_FILES += \
@@ -129,7 +125,9 @@ endif
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel \
-    device/htc/pyramid/modules/bcmdhd.ko:/system/lib/modules/bcmdhd.ko
+    device/htc/pyramid/modules/bcmdhd.ko:/system/lib/modules/bcmdhd.ko \
+    device/htc/pyramid/modules/cifs.ko:/system/lib/modules/cifs.ko \
+    device/htc/pyramid/modules/tun.ko:/system/lib/modules/tun.ko
 
 # call the proprietary setup
 $(call inherit-product-if-exists, vendor/htc/pyramid/pyramid-vendor.mk)
@@ -141,3 +139,11 @@ $(call inherit-product, device/htc/pyramid/media_a1026.mk)
 $(call inherit-product, device/htc/pyramid/media_htcaudio.mk)
 
 $(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
+
+# Device naming
+PRODUCT_DEVICE := pyramid
+PRODUCT_NAME := pyramid
+PRODUCT_BRAND := htc
+PRODUCT_MODEL := HTC Sensation
+PRODUCT_MANUFACTURER := HTC
+

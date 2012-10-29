@@ -1,13 +1,13 @@
 # Specify phone tech before including full_phone
-$(call inherit-product, vendor/AOKP/config/gsm.mk)
+$(call inherit-product, vendor/cm/config/gsm.mk)
 
 # Release name
 PRODUCT_RELEASE_NAME := pyramid
 
-TARGET_BOOTANIMATION_NAME := vertical-540x960
+TARGET_BOOTANIMATION_NAME := 540
 
 # Inherit some common CM stuff.
-$(call inherit-product, vendor/AOKP/config/common_phone.mk)
+$(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
 # Inherit device configuration
 $(call inherit-product, device/htc/pyramid/device_pyramid.mk)

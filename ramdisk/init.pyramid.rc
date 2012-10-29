@@ -64,7 +64,6 @@ on emmc-fs
 
     mkdir /vendor/etc 0771 system system
     symlink /system/vendor/etc/audio_effects.conf /vendor/etc/audio_effects.conf
-    symlink /system/vendor/etc/audio_policy.conf /vendor/etc/audio_policy.conf
 
 on post-fs-data
     # double check the perms and set owner
@@ -75,6 +74,9 @@ on post-fs-data
     setprop vold.post_fs_data_done 1
 
 on boot
+    # for systrace
+    mount debugfs /sys/kernel/debug /sys/kernel/debug
+
     # Chown polling nodes as needed from UI running on system server
     chmod 0664 /sys/devices/platform/msm_sdcc.1/polling
     chmod 0664 /sys/devices/platform/msm_sdcc.2/polling
@@ -194,10 +196,6 @@ service iprenew_wlan0 /system/bin/dhcpcd -n
     disabled
     oneshot
 
-service mpdecision /system/bin/mpdecision --no_sleep --avg_comp --single_core_while_panel_off
-    user root
-    disabled
-
 service netmgrd /system/bin/netmgrd
     class main
 
@@ -227,11 +225,6 @@ service rmt_storage /system/bin/rmt_storage /dev/block/mmcblk0p26 /dev/block/mmc
     class core
     user root
 
-service thermald /system/bin/thermald
-    user root
-    group root
-    disabled
-
 service wpa_supplicant /system/bin/wpa_supplicant -Dnl80211 -iwlan0 -c /data/misc/wifi/wpa_supplicant.conf
     user root
     group wifi inet
@@ -245,7 +238,10 @@ on property:init.svc.bootanim=stopped
 on property:ro.hdmi.enable=true
     start hdmid
 
+on property:service.adb.root=1
+    write /sys/class/android_usb/android0/enable 0
+    restart adbd
+    write /sys/class/android_usb/android0/enable 1
+
 on property:sys.radio.shutdown=true
     exec /system/bin/sh /system/etc/init.qcom.efs.sync.sh
-    user root
-    group root

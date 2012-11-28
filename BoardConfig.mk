@@ -40,6 +40,9 @@ TARGET_PREBUILT_KERNEL := device/htc/pyramid/prebuilt/kernel
 TARGET_SCREEN_HEIGHT := 960
 TARGET_SCREEN_WIDTH := 540
 
+# Bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/htc/pyramid/bluetooth
+
 # GPS
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := pyramid
 

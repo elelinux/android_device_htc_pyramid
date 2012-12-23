@@ -126,8 +126,10 @@ endif
 PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel \
     device/htc/pyramid/modules/bcmdhd.ko:/system/lib/modules/bcmdhd.ko \
-    device/htc/pyramid/modules/cifs.ko:/system/lib/modules/cifs.ko \
-    device/htc/pyramid/modules/tun.ko:/system/lib/modules/tun.ko
+    device/htc/pyramid/modules/lzo_compress.ko:/system/lib/modules/lzo_compress.ko \
+    device/htc/pyramid/modules/lzo_decompress.ko:/system/lib/modules/lzo_decompress.ko \
+    device/htc/pyramid/modules/tun.ko:/system/lib/modules/tun.ko \
+    device/htc/pyramid/modules/zram.ko:/system/lib/modules/zram.ko 
 
 # call the proprietary setup
 $(call inherit-product-if-exists, vendor/htc/pyramid/pyramid-vendor.mk)

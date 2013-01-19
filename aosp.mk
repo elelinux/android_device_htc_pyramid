@@ -1,14 +1,14 @@
 # Specify phone tech before including full_phone
-$(call inherit-product, vendor/ev/config/gsm.mk)
+$(call inherit-product, vendor/aosp/config/gsm.mk)
 
-# Inherit some common evervolv stuff.
-$(call inherit-product, vendor/ev/config/common_full_phone.mk)
+# Inherit some common aosp stuff.
+$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 
 # Inherit device configuration
 $(call inherit-product, device/htc/pyramid/device_pyramid.mk)
 
 # Device naming
-PRODUCT_NAME := ev_pyramid
+PRODUCT_NAME := aosp_pyramid
 PRODUCT_DEVICE := pyramid
 PRODUCT_BRAND := htc
 PRODUCT_MODEL := HTC Sensation
@@ -20,18 +20,17 @@ PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=htc_pyramid BUILD_FINGERPRINT=tmous
 #
 # Set up the product codename, build version & MOTD.
 #
-PRODUCT_CODENAME := Macto
-PRODUCT_VERSION_DEVICE_SPECIFIC := p1
+PRODUCT_CODENAME := AOSP
+PRODUCT_VERSION_DEVICE_SPECIFIC := P1
 
-PRODUCT_MOTD := "\n\n\n--------------------MESSAGE---------------------\nThank you for choosing Evervolv for your HTC Sensation\nPlease visit us at \#evervolv on irc.freenode.net\nFollow @preludedrew for the latest Evervolv updates\nGet the latest rom at evervolv.com\n------------------------------------------------\n"
 
 # Copy compatible prebuilt files
 PRODUCT_COPY_FILES +=  \
-    vendor/ev/prebuilt/qhd/media/bootanimation.zip:system/media/bootanimation.zip
+    vendor/aosp/prebuilt/qhd/media/bootanimation.zip:system/media/bootanimation.zip
 
 # qHD overlay
 PRODUCT_PACKAGE_OVERLAYS += \
-    vendor/ev/overlay/qhd
+    vendor/aosp/overlay/qhd
 
 # Hot reboot
 PRODUCT_PACKAGE_OVERLAYS += \

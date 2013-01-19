@@ -20,7 +20,7 @@ PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=htc_pyramid BUILD_FINGERPRINT=tmous
 #
 # Set up the product codename, build version & MOTD.
 #
-PRODUCT_CODENAME := AOSP
+PRODUCT_CODENAME := Pyramid
 PRODUCT_VERSION_DEVICE_SPECIFIC := P1
 
 

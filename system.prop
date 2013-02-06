@@ -4,7 +4,7 @@
 
 ro.sf.lcd_density=240
 
-# radio
+# Radio
 mobiledata.interfaces=rmnet0
 rild.libpath=/system/lib/libhtc_ril.so
 
@@ -16,7 +16,7 @@ ro.ril.enable.amr.wideband=0
 # Modify MMS APN retry timer from 5s to 2s.
 ro.gsm.2nd_data_retry_config=max_retries=3, 2000, 2000, 2000
 
-# DragunKorr RF team request
+# Gps
 ro.ril.enable.dtm=0  
 ro.ril.gprsclass=12  
 ro.ril.hsdpa.category=10  
@@ -31,16 +31,24 @@ ro.ril.set.mtu1472=1
 # For HSDPA low throughput
 ro.ril.disable.power.collapse=1
 
-# qcom cpugov service
+# Qcom cpugov service
 dev.pm.dyn_samplingrate=1
 
-# wifi
+# Wifi
 wifi.interface=wlan0
 
 # UMS
 persist.sys.usb.config=mass_storage,adb
 ro.vold.umsdirtyratio=50
 
-# sleep
+# Sleep
 ro.ril.disable.power.collapse=0
 pm.sleep_mode=1
+
+
+# Hardware Info
+ro.device.cpu=1.2 GHz dual-core Qualcomm MSM8260 (S3) Snapdragon
+ro.device.gpu=Qualcomm Adreno 220
+ro.device.rear_cam=8 MP
+ro.device.front_cam=0.3 MP
+ro.device.screen_res=540x960

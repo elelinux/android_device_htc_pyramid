@@ -16,13 +16,12 @@ ro.ril.enable.amr.wideband=0
 # Modify MMS APN retry timer from 5s to 2s.
 ro.gsm.2nd_data_retry_config=max_retries=3, 2000, 2000, 2000
 
-# Gps
+# Gps, Telephony
 ro.ril.enable.dtm=0  
 ro.ril.gprsclass=12  
 ro.ril.hsdpa.category=10  
 ro.ril.hsupa.category=6  
 ro.ril.hsxpa=3
-
 ro.telephony.ril.v3=datacallapn,signalstrength
 
 # Modify MTU from 1500 to 1472 on 3G network
@@ -44,7 +43,6 @@ ro.vold.umsdirtyratio=50
 # Sleep
 ro.ril.disable.power.collapse=0
 pm.sleep_mode=1
-
 
 # Hardware Info
 ro.device.cpu=1.2 GHz dual-core Qualcomm MSM8260 (S3) Snapdragon

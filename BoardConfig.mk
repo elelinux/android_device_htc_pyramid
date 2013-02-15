@@ -39,12 +39,13 @@ BOARD_KERNEL_PAGE_SIZE := 2048
 BOARD_KERNEL_CMDLINE := console=ttyHSL0 androidboot.hardware=pyramid no_console_suspend=1
 
 # Kernel [Build]
-TARGET_KERNEL_CONFIG := pyramid_defconfig
+TARGET_KERNEL_CONFIG := ChronicKernel_defconfig
 TARGET_KERNEL_SOURCE := kernel/htc/msm8660
+TARGET_KERNEL_CUSTOM_TOOLCHAIN := linaro
 BUILD_KERNEL := true
 
 # Kernel [Prebuilt]
-TARGET_PREBUILT_KERNEL := device/htc/pyramid/prebuilt/kernel
+#TARGET_PREBUILT_KERNEL := device/htc/pyramid/prebuilt/kernel
 
 # Wifi
 WIFI_DRIVER_MODULE_NAME          := bcmdhd
@@ -55,6 +56,7 @@ BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := pyramid
 
 # RIL
 BOARD_USE_NEW_LIBRIL_HTC := true
+#TARGET_PROVIDES_LIBRIL := vendor/htc/pyramid/proprietary/libril.so
 
 # Filesystem
 TARGET_USERIMAGES_USE_EXT4 := true

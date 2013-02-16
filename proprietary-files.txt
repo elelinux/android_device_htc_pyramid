@@ -63,6 +63,7 @@ lib/libnetmgr.so
 lib/libqdp.so
 lib/libqmiservices.so
 lib/libqmi.so
+lib/libv8.so
 
 # Sensors
 lib/hw/sensors.pyramid.so

@@ -27,34 +27,32 @@
 # inherit from common msm8660
 -include device/htc/msm8660-common/BoardConfigCommon.mk
 
+# Audio
+BOARD_HAVE_HTC_AUDIO := true
+
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := pyramid
 
-# Kernel
+# Kernel [Settings]
 BOARD_KERNEL_BASE := 0x48000000
 BOARD_KERNEL_PAGE_SIZE := 2048
 BOARD_KERNEL_CMDLINE := console=ttyHSL0 androidboot.hardware=pyramid no_console_suspend=1
-TARGET_PREBUILT_KERNEL := device/htc/pyramid/prebuilt/kernel
 
-# Boot animation
-TARGET_SCREEN_HEIGHT := 960
-TARGET_SCREEN_WIDTH := 540
-
-# Bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/htc/pyramid/bluetooth
-
-# GPS
-BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := pyramid
-
-# Lights
-TARGET_PROVIDES_LIBLIGHT := true
-
-# RIL
-BOARD_USES_LEGACY_RIL := true
+# Kernel [Build]
+TARGET_KERNEL_CONFIG := ChronicKernel_defconfig
+TARGET_KERNEL_SOURCE := kernel/htc/msm8660
+TARGET_KERNEL_CUSTOM_TOOLCHAIN := linaro
+BUILD_KERNEL := true
 
 # Wifi
 WIFI_DRIVER_MODULE_NAME          := bcmdhd
 WIFI_DRIVER_MODULE_PATH          := "/system/lib/modules/bcmdhd.ko"
+
+# Qcom GPS
+BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := pyramid
+
+# RIL
+BOARD_USE_NEW_LIBRIL_HTC := true
 
 # Filesystem
 TARGET_USERIMAGES_USE_EXT4 := true

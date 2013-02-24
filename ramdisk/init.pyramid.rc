@@ -132,9 +132,6 @@ on boot
     chown system camera /sys/class/leds/flashlight/brightness
     chmod 0660          /sys/class/leds/flashlight/brightness
 
-    # Kernel init script - kernel config
-    chmod 0777          /system/etc/init.d/99kernel
-
     # for optical sensors
     chown system system /sys/class/optical_sensors/lightsensor/ls_adc
     chown system system /sys/class/optical_sensors/lightsensor/ls_auto
@@ -195,9 +192,9 @@ service iprenew_wlan0 /system/bin/dhcpcd -n
     disabled
     oneshot
 
-# service mpdecision /system/bin/mpdecision --no_sleep --avg_comp --single_core_while_panel_off
-  # user root
-   # disabled
+service mpdecision /system/bin/mpdecision --no_sleep --avg_comp --single_core_while_panel_off
+   user root
+   disabled
 
 service netmgrd /system/bin/netmgrd
     class main
@@ -228,10 +225,10 @@ service rmt_storage /system/bin/rmt_storage /dev/block/mmcblk0p26 /dev/block/mmc
     class core
     user root
 
-# service thermald /system/bin/thermald
-#    user root
-#    group root
-@    disabled
+service thermald /system/bin/thermald
+    user root
+    group root
+    disabled
 
 service wpa_supplicant /system/bin/wpa_supplicant -Dnl80211 -iwlan0 -c /data/misc/wifi/wpa_supplicant.conf
     user root

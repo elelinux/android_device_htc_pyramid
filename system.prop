@@ -45,10 +45,25 @@ ro.vold.umsdirtyratio=50
 ro.ril.disable.power.collapse=0
 pm.sleep_mode=1
 
+# DISABLE-KERNEL-ERROR-REPORT
+
+ro.kernel.android.checkjni=0
+ro.kernel.checkjni=0
+
+# SCROLLING-TWEAK
+windowsmgr.max_events_per_sec=150
+ro.max.fling_velocity=12000
+ro.min.fling_velocity=8000
+view.scroll_friction=0
 
 # Hardware Info
-ro.device.cpu=1.2 GHz dual-core Qualcomm MSM8260 (S3) Snapdragon
+ro.device.chipset=Qualcomm MSM8260 (S3) Snapdragon
+ro.device.cpu=1.2 GHz dual-core 
 ro.device.gpu=Qualcomm Adreno 220
-ro.device.rear_cam=8 MP
-ro.device.front_cam=0.3 MP
-ro.device.screen_res=540x960
+ro.device.rear_cam=8.0 megapixel with autofocus
+ro.device.front_cam=1.3 megapixel front facing
+ro.device.screen_res=540x960 4.3 inches
+
+#
+# END_PYRAMID_SYSTEM_PROPERTIES
+#

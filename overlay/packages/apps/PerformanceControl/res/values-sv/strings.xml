@@ -85,11 +85,11 @@ Copyright (C) 2012  James Roberts
     <string name="saved">mV sparad</string>
     <string name="not_supported">Din kärna stöder inte voltreglering</string>
     <!-- VM settings -->
-    <string name="ps_vm_set_on_boot">If enabled will restore all vm settings on reboot</string>
+    <string name="ps_vm_set_on_boot">Om aktiverad återställs alla vm inställningar vid omstart</string>
     <string name="dirty_ratio_title">Dirty ratio</string>
-    <string name="dirty_background_title">Dirty background ratio</string>
+    <string name="dirty_background_title">Dirty bakgrunds ratio</string>
     <string name="dirty_expire_title">Dirty expire centisecs</string>
-    <string name="dirty_writeback_title">Dirty writeback centisecs</string>
+    <string name="dirty_writeback_title">Dirty återfört centisecs</string>
     <string name="min_free_title">Minfree kbytes</string>
     <string name="overcommit_title">Overcommit ratio</string>
     <string name="swappiness_title">Swappiness</string>
@@ -103,13 +103,13 @@ Copyright (C) 2012  James Roberts
         contacting its developer to inform him that the states file is not
         readable.
     </string>
-    <string name="deep_sleep">"Deep Sleep"</string>
+    <string name="deep_sleep">"Djup Sömn"</string>
     <!-- CPU info -->
     <string name="kernel_info">LINUX KERNEL INFORMATION</string>
     <string name="cpu_info">CPU INFORMATION</string>
-    <string name="mem_info">MEMORY INFORMATION</string>
-    <string name="first_run_title">First check for root</string>
-    <string name="su_success_title">Success!</string>
+    <string name="mem_info">MINNES INFORMATION</string>
+    <string name="first_run_title">Först kontroll för root</string>
+    <string name="su_success_title">Succe!</string>
     <string name="su_failed_title">Oops!</string>
     <string name="first_run_message">The application needs to check for root access and
         busybox. Press OK to continue. Cancel if you would not like to grant
@@ -125,12 +125,12 @@ Copyright (C) 2012  James Roberts
         options will not work without root access. Sorry!
     </string>
     <!-- PC Settings -->
-    <string name="pt_use_light_theme">Use light theme</string>
-    <string name="ps_use_light_theme">If checked, Performance Control will use a Holo light theme</string>
-    <string name="pt_widget_bg_color">Widget bg color</string>
-    <string name="pt_widget_text_color">Widget text color</string>
+    <string name="pt_use_light_theme">Använd ljust tema</string>
+    <string name="ps_use_light_theme">Om markerad, kommer Prestanda Kontroll använda ljust tema</string>
+    <string name="pt_widget_bg_color">Widget bakgrunds färg</string>
+    <string name="pt_widget_text_color">Widget text färg</string>
     <string name="pt_ver">"Version - "</string>
     <!-- Color picker -->
-    <string name="dialog_color_picker">Color Picker</string>
-    <string name="press_color_to_apply">Press on Color to apply</string>
+    <string name="dialog_color_picker">Färgväljaren</string>
+    <string name="press_color_to_apply">Tryck på färg som ska användas</string>
 </resources>

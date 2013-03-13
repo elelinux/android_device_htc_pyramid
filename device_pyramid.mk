@@ -61,7 +61,7 @@ PRODUCT_COPY_FILES += \
 # Some misc configuration files
 PRODUCT_COPY_FILES += \
     device/htc/pyramid/vold.fstab:system/etc/vold.fstab \
-    device/htc/pyramid/configs/89bruce:system/etc/init.d/89bruce
+    device/htc/pyramid/configs/99kernel:system/etc/init.d/99kernel
 
 # Keylayouts and Keychars
 PRODUCT_COPY_FILES += \
@@ -110,11 +110,6 @@ PRODUCT_COPY_FILES += \
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml
-
-# Custom media config for HTC camera
-PRODUCT_COPY_FILES += \
-    device/htc/msm8660-common/configs/media_codecs.xml:system/etc/media_codecs.xml \
-    device/htc/pyramid/configs/media_profiles.xml:system/etc/media_profiles.xml
 
 ## misc
 PRODUCT_PROPERTY_OVERRIDES += \

@@ -43,9 +43,6 @@ TARGET_KERNEL_CONFIG := pyramid_defconfig
 TARGET_KERNEL_SOURCE := kernel/htc/msm8660
 BUILD_KERNEL := true
 
-# Kernel [Prebuilt]
-#TARGET_PREBUILT_KERNEL := device/htc/pyramid/prebuilt/kernel
-
 # Wifi
 WIFI_DRIVER_MODULE_NAME          := bcmdhd
 WIFI_DRIVER_MODULE_PATH          := "/system/lib/modules/bcmdhd.ko"
@@ -55,7 +52,6 @@ BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := pyramid
 
 # RIL
 BOARD_USE_NEW_LIBRIL_HTC := true
-#TARGET_PROVIDES_LIBRIL := vendor/htc/pyramid/proprietary/libril.so
 
 # Filesystem
 TARGET_USERIMAGES_USE_EXT4 := true

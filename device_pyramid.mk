@@ -79,8 +79,6 @@ PRODUCT_COPY_FILES += \
 # HTC BT Audio tune
 PRODUCT_COPY_FILES += device/htc/pyramid/dsp/AudioBTID.csv:system/etc/AudioBTID.csv
 
-# QC thermald config
-
 # Sound configs
 PRODUCT_COPY_FILES += \
     device/htc/pyramid/dsp/AdieHWCodec.csv:system/etc/AdieHWCodec.csv \

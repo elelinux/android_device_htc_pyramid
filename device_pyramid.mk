@@ -37,7 +37,6 @@ PRODUCT_PACKAGES += \
 ## The gps config appropriate for this device
 PRODUCT_COPY_FILES += device/common/gps/gps.conf_US:system/etc/gps.conf
 
-
 # Bluetooth firmware
 $(call inherit-product, device/htc/msm8660-common/bcm_hcd.mk)
 
@@ -60,8 +59,7 @@ PRODUCT_COPY_FILES += \
 
 # Some misc configuration files
 PRODUCT_COPY_FILES += \
-    device/htc/pyramid/vold.fstab:system/etc/vold.fstab \
-    device/htc/pyramid/configs/99kernel:system/etc/init.d/99kernel
+    device/htc/pyramid/vold.fstab:system/etc/vold.fstab 
 
 # Keylayouts and Keychars
 PRODUCT_COPY_FILES += \
@@ -78,6 +76,9 @@ PRODUCT_COPY_FILES += \
 
 # HTC BT Audio tune
 PRODUCT_COPY_FILES += device/htc/pyramid/dsp/AudioBTID.csv:system/etc/AudioBTID.csv
+
+# QC thermald config
+PRODUCT_COPY_FILES += device/htc/pyramid/configs/thermald.conf:system/etc/thermald.conf
 
 # Sound configs
 PRODUCT_COPY_FILES += \

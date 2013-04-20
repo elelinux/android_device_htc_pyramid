@@ -32,7 +32,7 @@ PRODUCT_COPY_FILES += device/common/gps/gps.conf_EU:system/etc/gps.conf
 
 # Bluetooth
 PRODUCT_COPY_FILES += \
-    device/htc/msm8660-common/firmware/bcm4329.hcd:system/vendor/firmware/bcm4329.hcd 
+    device/htc/msm8660-common/firmware/bcm4329.hcd:system/vendor/firmware/bcm4329.hcd
 
 # Wifi
 $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4329/device-bcm.mk)
@@ -117,17 +117,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.google.locationfeatures=1 \
     dalvik.vm.dexopt-flags=m=y
 
-ifeq ($(TARGET_PREBUILT_KERNEL),)
-LOCAL_KERNEL := device/htc/pyramid/prebuilt/kernel
-else
-LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
-endif
+#ifeq ($(TARGET_PREBUILT_KERNEL),)
+#LOCAL_KERNEL := device/htc/pyramid/prebuilt/kernel
+#else
+#LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
+#endif
 
-PRODUCT_COPY_FILES += \
-    $(LOCAL_KERNEL):kernel \
-    device/htc/pyramid/modules/bcmdhd.ko:/system/lib/modules/bcmdhd.ko \
-    device/htc/pyramid/modules/cifs.ko:/system/lib/modules/cifs.ko \
-    device/htc/pyramid/modules/tun.ko:/system/lib/modules/tun.ko
+#PRODUCT_COPY_FILES += \
+#    $(LOCAL_KERNEL):kernel \
+#    device/htc/pyramid/modules/bcmdhd.ko:/system/lib/modules/bcmdhd.ko
 
 # call the proprietary setup
 $(call inherit-product-if-exists, vendor/htc/pyramid/pyramid-vendor.mk)

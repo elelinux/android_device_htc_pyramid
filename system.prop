@@ -55,9 +55,6 @@ ro.max.fling_velocity=12000
 ro.min.fling_velocity=8000
 view.scroll_friction=0
 
-# Disable HW Overlay 
-flinger.transact=1
-
 # Hardware Info
 ro.device.chipset=Qualcomm MSM8260 (S3) Snapdragon
 ro.device.cpu=1.2 GHz dual-core 

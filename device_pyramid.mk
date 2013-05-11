@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2011 The CyanogenMod Project
+# Copyright (C) 2013 The AOKP Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -21,12 +21,12 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 PRODUCT_NAME := pyramid
 PRODUCT_DEVICE := pyramid
 
-# common msm8660 configs
+# Common msm8660 configs
 $(call inherit-product, device/htc/msm8660-common/msm8660.mk)
 
 DEVICE_PACKAGE_OVERLAYS += device/htc/pyramid/overlay
 
-# GPS and sensors
+# GPS
 PRODUCT_PACKAGES += \
     gps.pyramid
 
@@ -34,7 +34,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Torch
 
-## The gps config appropriate for this device
+# Advanced Device Settings
+PRODUCT_PACKAGES += \
+    HTC-Sensation-Settings
+
+# The gps config appropriate for this device
 PRODUCT_COPY_FILES += device/common/gps/gps.conf_US:system/etc/gps.conf
 
 # Bluetooth firmware
@@ -49,7 +53,7 @@ PRODUCT_COPY_FILES += \
     device/htc/pyramid/ramdisk/init.pyramid.usb.rc:root/init.pyramid.usb.rc \
     device/htc/pyramid/ramdisk/ueventd.pyramid.rc:root/ueventd.pyramid.rc
 
-## recovery and custom charging
+# Recovery and custom charging
 PRODUCT_COPY_FILES += \
     device/htc/pyramid/recovery/sbin/choice_fn:recovery/root/sbin/choice_fn \
     device/htc/pyramid/recovery/sbin/power_test:recovery/root/sbin/power_test \
@@ -110,20 +114,20 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml
 
-## misc
+# Misc
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.setupwizard.enable_bypass=1 \
     dalvik.vm.lockprof.threshold=500 \
     ro.com.google.locationfeatures=1 \
     dalvik.vm.dexopt-flags=m=y
 
-# call the proprietary setup
+# Call the proprietary setup
 $(call inherit-product-if-exists, vendor/htc/pyramid/pyramid-vendor.mk)
 
-# media profiles and capabilities spec
+# Media profiles and capabilities spec
 $(call inherit-product, device/htc/pyramid/media_a1026.mk)
 
-## htc audio settings
+# HTC audio settings
 $(call inherit-product, device/htc/pyramid/media_htcaudio.mk)
 
 $(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)

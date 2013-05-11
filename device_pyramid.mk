@@ -38,6 +38,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     HTC-Sensation-Settings
 
+# QCOM FM 
+PRODUCT_PACKAGES += \
+    qcom.fmradio \
+    libqcomfm_jni \
+#    FM
+
 # The gps config appropriate for this device
 PRODUCT_COPY_FILES += device/common/gps/gps.conf_US:system/etc/gps.conf
 

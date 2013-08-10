@@ -48,7 +48,8 @@ PRODUCT_COPY_FILES += \
     device/htc/pyramid/ramdisk/fstab.pyramid:root/fstab.pyramid \
     device/htc/pyramid/ramdisk/init.pyramid.rc:root/init.pyramid.rc \
     device/htc/pyramid/ramdisk/init.pyramid.usb.rc:root/init.pyramid.usb.rc \
-    device/htc/pyramid/ramdisk/ueventd.pyramid.rc:root/ueventd.pyramid.rc
+    device/htc/pyramid/ramdisk/ueventd.pyramid.rc:root/ueventd.pyramid.rc \
+    device/htc/pyramid/ramdisk/remount.pyramid:root/remount.pyramid
 
 ## recovery and custom charging
 PRODUCT_COPY_FILES += \
@@ -60,7 +61,6 @@ PRODUCT_COPY_FILES += \
 
 # Some misc configuration files
 PRODUCT_COPY_FILES += \
-    device/htc/pyramid/vold.fstab:system/etc/vold.fstab \
     device/htc/pyramid/configs/sweep2wake:system/etc/init.d/sweep2wake
 
 # Keylayouts and Keychars

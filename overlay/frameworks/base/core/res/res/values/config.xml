@@ -30,11 +30,11 @@
     <!-- Default LED off time for notification LED in milliseconds. -->
     <integer name="config_defaultNotificationLedOff">9000</integer>
 
-    <!-- Our amoled doesn't animate well. -->
-    <bool name="config_animateScreenLights">false</bool>
+    <!-- Replace the choppy CRT animation with a smooth fade-out animation -->
+    <bool name="config_animateScreenLights">true</bool>
 
     <!-- If this is true, the screen will come on when you unplug usb/power/whatever -->
-    <bool name="config_unplugTurnsOnScreen">true</bool>
+    <bool name="config_unplugTurnsOnScreen">false</bool>
 
     <!-- disable menu hard key on Pyramid in non-pattern lockscreen -->
     <bool name="config_disableMenuKeyInLockScreen">true</bool>
@@ -68,6 +68,7 @@
         <item>321</item>
         <item>641</item>
         <item>1281</item>
+        <item>1951</item>
         <item>2601</item>
     </integer-array>
 
@@ -76,15 +77,16 @@
          than the size of the config_autoBrightnessLevels array.
     -->
     <integer-array name="config_autoBrightnessLcdBacklightValues">
-        <item>56</item>
-        <item>56</item>
-        <item>56</item>
-        <item>90</item>
-        <item>117</item>
-        <item>142</item>
-        <item>170</item>
-        <item>198</item>
-        <item>227</item>
+        <item>40</item>
+        <item>40</item>
+        <item>44</item>
+        <item>59</item>
+        <item>79</item>
+        <item>94</item>
+        <item>130</item>
+        <item>155</item>
+        <item>182</item>
+        <item>209</item>
         <item>255</item>
     </integer-array>
 
@@ -167,13 +169,6 @@
         <item>"wlan\\d"</item>
     </string-array>
 
-    <!-- List of regexpressions describing the interface (if any) that represent tetherable
-         bluetooth interfaces.  If the device doesn't want to support tethering over bluetooth this
-         should be empty. -->
-    <string-array translatable="false" name="config_tether_bluetooth_regexs">
-        <item>"bnep\\d"</item>
-    </string-array>
-
     <!-- Array of ConnectivityManager.TYPE_xxxx values allowable for tethering -->
     <!-- Common options are [1, 4] for TYPE_WIFI and TYPE_MOBILE_DUN or
     <!== [0,1,5,7] for TYPE_MOBILE, TYPE_WIFI, TYPE_MOBILE_HIPRI and TYPE_BLUETOOTH -->
@@ -185,7 +180,7 @@
     </integer-array>
 
     <!-- Boolean indicating whether the wifi chipset has dual frequency band support -->
-    <bool translatable="false" name="config_wifi_dual_band_support">true</bool>
+    <bool translatable="false" name="config_wifi_dual_band_support">false</bool>
 
     <!-- Boolean indicating whether the wifi chipset has background scan support -->
     <bool translatable="false" name="config_wifi_background_scan_support">true</bool>
@@ -195,5 +190,18 @@
 
     <!-- Is the notification LED intrusive? Used to decide if there should be a disable option -->
     <!-- <bool name="config_intrusiveNotificationLed">true</bool> -->
+
+    <!-- List of regexpressions describing the interface (if any) that represent tetherable
+         bluetooth interfaces.  If the device doesn't want to support tethering over bluetooth this
+         should be empty. -->
+    <string-array translatable="false" name="config_tether_bluetooth_regexs">
+        <item>"bt-pan"</item>
+    </string-array>
+
+    <!-- Device supports LED flashlight -->
+    <bool name="config_enableTorch">true</bool>
+
+    <!-- Disable lockscreen translucent decor by default -->
+    <bool name="config_enableLockScreenTranslucentDecor">true</bool>
 
 </resources>

@@ -20,15 +20,8 @@
 # definition file).
 #
 
-# WARNING: This line must come *before* including the proprietary
-# variant, so that it gets overwritten by the parent (which goes
-# against the traditional rules of inheritance).
-
 # inherit from common msm8660
 -include device/htc/msm8660-common/BoardConfigCommon.mk
-
-# Audio
-BOARD_HAVE_HTC_AUDIO := true
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := pyramid
@@ -40,12 +33,10 @@ BOARD_KERNEL_CMDLINE := console=ttyHSL0 androidboot.hardware=pyramid no_console_
 
 # Kernel [Build]
 TARGET_KERNEL_CONFIG := pyramid_defconfig
-TARGET_KERNEL_SOURCE := kernel/htc/msm8660
 BUILD_KERNEL := true
 
-# Wifi
-WIFI_DRIVER_MODULE_NAME          := bcmdhd
-WIFI_DRIVER_MODULE_PATH          := "/system/lib/modules/bcmdhd.ko"
+# Bluetooth/Wifi
+-include device/htc/msm8660-common/bcmdhd.mk
 
 # Qcom GPS
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := pyramid

@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2011 The CyanogenMod Project
+# Copyright (C) 2013 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,29 +14,21 @@
 # limitations under the License.
 #
 
-$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
-
-# Device ID
-PRODUCT_NAME := full_pyramid
-PRODUCT_DEVICE := pyramid
 
 # common msm8660 configs
 $(call inherit-product, device/htc/msm8660-common/msm8660.mk)
 
+$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+
 DEVICE_PACKAGE_OVERLAYS += device/htc/pyramid/overlay
 
-# GPS and sensors
+# GPS
 PRODUCT_PACKAGES += \
     gps.pyramid
 
-# Torch
-PRODUCT_PACKAGES += \
-    Torch
-
 ## The gps config appropriate for this device
 PRODUCT_COPY_FILES += device/common/gps/gps.conf_US:system/etc/gps.conf
-
 
 # Bluetooth firmware
 $(call inherit-product, device/htc/msm8660-common/bcm_hcd.mk)
@@ -49,7 +41,7 @@ PRODUCT_COPY_FILES += \
     device/htc/pyramid/ramdisk/init.pyramid.rc:root/init.pyramid.rc \
     device/htc/pyramid/ramdisk/init.pyramid.usb.rc:root/init.pyramid.usb.rc \
     device/htc/pyramid/ramdisk/ueventd.pyramid.rc:root/ueventd.pyramid.rc \
-    device/htc/pyramid/ramdisk/remount.pyramid:root/remount.pyramid
+    device/htc/pyramid/ramdisk/ueventd.rc:root/ueventd.rc
 
 ## recovery and custom charging
 PRODUCT_COPY_FILES += \
@@ -61,7 +53,7 @@ PRODUCT_COPY_FILES += \
 
 # Some misc configuration files
 PRODUCT_COPY_FILES += \
-    device/htc/pyramid/configs/sweep2wake:system/etc/init.d/sweep2wake
+    device/htc/pyramid/configs/89z_kernel:system/etc/init.d/89z_kernel
 
 # Keylayouts and Keychars
 PRODUCT_COPY_FILES += \
@@ -78,9 +70,6 @@ PRODUCT_COPY_FILES += \
 
 # HTC BT Audio tune
 PRODUCT_COPY_FILES += device/htc/pyramid/dsp/AudioBTID.csv:system/etc/AudioBTID.csv
-
-# QC thermald config
-PRODUCT_COPY_FILES += device/htc/pyramid/configs/thermald.conf:system/etc/thermald.conf
 
 # Sound configs
 PRODUCT_COPY_FILES += \
@@ -117,7 +106,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.setupwizard.enable_bypass=1 \
     dalvik.vm.lockprof.threshold=500 \
     ro.com.google.locationfeatures=1 \
-    dalvik.vm.dexopt-flags=m=y
+    dalvik.vm.dexopt-flags=m=y \
+    ro.goo.version=$(shell date +%s)
 
 # call the proprietary setup
 $(call inherit-product-if-exists, vendor/htc/pyramid/pyramid-vendor.mk)
@@ -129,3 +119,7 @@ $(call inherit-product, device/htc/pyramid/media_a1026.mk)
 $(call inherit-product, device/htc/pyramid/media_htcaudio.mk)
 
 $(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
+
+# Device ID
+PRODUCT_NAME := full_pyramid
+PRODUCT_DEVICE := pyramid

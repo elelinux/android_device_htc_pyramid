@@ -1,6 +1,6 @@
 #
 # Pyramid system.prop
-
+#
 ro.sf.lcd_density=240
 
 # NETWORK/DATA/RADIO
@@ -10,7 +10,6 @@ ro.telephony.ril.v3=datacallapn,signalstrength
 
 # T-Mobile data drop fix, uncomment if you have this issue
 # and delete above line
-
 #ro.telephony.ril.v3=datacallapn,signalstrength,skipbrokendatacall
 ro.ril.enable.sdr=1
 ro.ril.enable.amr.wideband=0
@@ -26,6 +25,7 @@ ro.ril.hsdpa.category=10
 ro.ril.hsupa.category=6  
 ro.ril.hsxpa=3
 ro.ril.set.mtu1472=1
+ro.ril.disable.mcc.filter=1
 wifi.interface=wlan0
 wifi.supplicant_scan_interval=160
 
@@ -41,9 +41,10 @@ ro.vold.umsdirtyratio=50
 ro.kernel.android.checkjni=0
 ro.kernel.checkjni=0
 
-#### AUTO-ROTATE LOCKSCREEN ####
-# (uncomment line below to enable)
-#lockscreen.rot_override=true
+# Scrolling-Tweaks
+windowsmgr.max_events_per_sec=150
+ro.max.fling_velocity=12000
+ro.min.fling_velocity=8000
+view.scroll_friction=0
 
 # END_PYRAMID_SYSTEM_PROPERTIES
-

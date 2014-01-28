@@ -40,8 +40,7 @@ PRODUCT_COPY_FILES += \
     device/htc/pyramid/ramdisk/fstab.pyramid:root/fstab.pyramid \
     device/htc/pyramid/ramdisk/init.pyramid.rc:root/init.pyramid.rc \
     device/htc/pyramid/ramdisk/init.pyramid.usb.rc:root/init.pyramid.usb.rc \
-    device/htc/pyramid/ramdisk/ueventd.pyramid.rc:root/ueventd.pyramid.rc \
-    device/htc/pyramid/ramdisk/ueventd.rc:root/ueventd.rc
+    device/htc/pyramid/ramdisk/ueventd.pyramid.rc:root/ueventd.pyramid.rc
 
 ## recovery and custom charging
 PRODUCT_COPY_FILES += \
@@ -53,7 +52,7 @@ PRODUCT_COPY_FILES += \
 
 # Some misc configuration files
 PRODUCT_COPY_FILES += \
-    device/htc/pyramid/configs/89z_kernel:system/etc/init.d/89z_kernel
+    device/htc/pyramid/configs/99kernel:system/etc/init.d/99kernel
 
 # Keylayouts and Keychars
 PRODUCT_COPY_FILES += \
@@ -101,13 +100,20 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml
 
+# Adreno Drivers
+PRODUCT_COPY_FILES += \
+    device/htc/pyramid/firmware/a225_pfp.fw:system/etc/firmware/a225_pfp.fw \
+    device/htc/pyramid/firmware/a225_pm4.fw:system/etc/firmware/a225_pm4.fw \
+    device/htc/pyramid/firmware/a225p5_pm4.fw:system/etc/firmware/a225p5_pm4.fw \
+    device/htc/pyramid/firmware/yamato_pfp.fw:system/etc/firmware/yamato_pfp.fw \
+    device/htc/pyramid/firmware/yamato_pm4.fw:system/etc/firmware/yamato_pm4.fw
+
 ## misc
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.setupwizard.enable_bypass=1 \
     dalvik.vm.lockprof.threshold=500 \
     ro.com.google.locationfeatures=1 \
-    dalvik.vm.dexopt-flags=m=y \
-    ro.goo.version=$(shell date +%s)
+    dalvik.vm.dexopt-flags=m=y
 
 # call the proprietary setup
 $(call inherit-product-if-exists, vendor/htc/pyramid/pyramid-vendor.mk)
